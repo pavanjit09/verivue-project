@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verivue-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: verivue-backend
+  template:
+    metadata:
+      labels:
+        app: verivue-backend
+    spec:
+      containers:
+      - name: verivue-backend
+        image: pavanjit/verivue-backend
+        ports:
+        - containerPort: 5000
