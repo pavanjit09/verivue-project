@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verivue-chatbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: verivue-chatbot
+  template:
+    metadata:
+      labels:
+        app: verivue-chatbot
+    spec:
+      containers:
+      - name: verivue-chatbot
+        image: pavanjit/verivue-chatbot
+        ports:
+        - containerPort: 8000

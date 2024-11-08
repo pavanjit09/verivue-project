@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: verivue-chatbot-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: verivue-chatbot
+  ports:
+  - protocol: TCP
+    port: 8000        # External port users will connect to
+    targetPort: 8000   # Internal port of the Laravel app
